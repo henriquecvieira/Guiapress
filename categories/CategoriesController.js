@@ -48,7 +48,7 @@ router.post("/admin/categories/delete", (req, res) => {
     }
 });
 
-router.get("/admin/categories", (req, res) => {
+router.get("/admin/categories/edit/:id", (req, res) => {
     var id = req.params.id;
     if(isNaN(id)){
         res.redirect("/admin/categories");
