@@ -5,11 +5,12 @@
     <br>
     <div class="card">
         <div class="card-header">    
-         <h2>Cadastro de Categoria</h2>
+         <h2>Novo Artigo</h2>
         </div>
             <div class="card-body">
                 <form method="POST" action="/categories/save">
-                    <input class="form-control" type="text" name="title" placeholder="Defina o título da categoria"><br>
+                    <input class="form-control" type="text" name="title" placeholder="Defina o título do artigo"><br>
+                    <textarea class="form-control" placeholder="Escreva o título aqui" name="body"></textarea><br>
                     <button class="btn btn-success">Cadastrar</button>
                 </form>
             </div>
