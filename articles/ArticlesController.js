@@ -19,9 +19,9 @@ router.get("/admin/articles/new", (req, res) => {
 })
 
 router.post("/articles/save", (req, res) => {
-    let title = req.body.title
-    let body = req.body.body
-    let category = req.body.category
+    var title = req.body.title
+    var body = req.body.body
+    var category = req.body.category
 
     Article.create({
         title: title, 
@@ -33,4 +33,24 @@ router.post("/articles/save", (req, res) => {
         res.redirect("/admin/articles")
     })
 })
+
+router.post("/admin/articles/delete", (req, res) => {
+    let id = req.body.id
+    if(id != undefined){
+        if(!isNaN(id)){
+            Article.destroy({
+                where: {
+                    id: id
+                }
+            }).then(() => {
+                res.redirect("/admin/articles");
+            });
+        }else{// NÃO FOR UM NÚMERO
+            res.redirect("/admin/articles");
+        }
+    }else{ // NULL
+        res.redirect("/admin/articles");
+    }
+});
+
 module.exports = router;
