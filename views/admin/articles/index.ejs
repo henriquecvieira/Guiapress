@@ -11,14 +11,22 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>ID</th>
+                <th>Id</th>
                 <th>Título</th>
                 <th>Slug</th>
-                <th>Category</th>
+                <th>Categooria</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
+            <% articles.forEach(article => { %>
+                <td><%= article.id %></td>
+                <td><%= article.title %></td>
+                <td><%= article.slug %></td>
+                <td><%= article.categoryId %></td>
+                <td><%= article.Ações %></td>
+
+            <% }) %>
                       
         </tbody>    
     </table>
