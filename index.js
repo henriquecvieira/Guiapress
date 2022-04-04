@@ -77,7 +77,7 @@ app.get("/category/:slug", (req, res) => {
         if(category != undefined){
             
             Category.findAll().then(categories => {
-                res.render("index",{articles: category.articles,categories: categories});
+                res.render("index",{articles: category.articles, categories: categories});
 
             });
         }else{
