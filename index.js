@@ -23,18 +23,39 @@ connection
     .authenticate()
     .then(() => {
         console.log("Sucessfull connection")
-    }).catch((errror) => {
+    }).catch((error) => {
         console.log("error")
     })
     
 
-
 app.use("/", categoriesController)
 app.use("/", articlesController)
 
+
 app.get("/", (req, res) => {
-    res.render("index");
+    Article.findAll().then(articles => {
+        res.render("index", {articles: articles})
+    })
 })
+
+app.get("/slug", (req, res) => {
+    var slug = req.params.slug
+    Article.findOne({
+        where: {
+            slug: slug
+        }
+    }).then(article => {
+        if(article != undefined){
+            res.render("");
+        }else{
+            res.redirect("/")
+        }
+    }).catch(err => {
+        res.redirect("/")
+    })
+    
+})
+
 
 app.listen(3333, () => {
     console.log("Backend started in http://localhost:3333")
