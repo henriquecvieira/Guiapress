@@ -1,7 +1,7 @@
-const Sequelize = require("sequelize")
-const connection = require("../database/database")
+const Sequelize = require("sequelize");
+const connection = require("../database/database");
 
-const User = connection.define("users", {
+const User = connection.define('users',{
     email:{
         type: Sequelize.STRING,
         allowNull: false
@@ -13,4 +13,4 @@ const User = connection.define("users", {
 
 
 
-module.exports = User
+module.exports = User;

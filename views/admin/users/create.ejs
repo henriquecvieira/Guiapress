@@ -1,5 +1,5 @@
-<%- include("../../partials/header.ejs"); %>
-<%- include("../../partials/navbar.ejs"); %>
+<%- include("../../partials/header.ejs") %>
+<%- include("../../partials/navbar.ejs") %>
 
 <div class="container">
     <hr>
@@ -8,7 +8,7 @@
             <h2>Criação de usuário</h2>
         </div>
         <div class="card-body">
-            <form action="/user/create" method="POST">
+            <form action="/users/create" method="POST">
                 <input class="form-control" name="email" type="email" placeholder="email@exemplo.com"><br>
                 <input class="form-control" name="password" type="password" placeholder="******">
                 <button type="submit" class="btn btn-success btn-block">Criar </button>
@@ -18,4 +18,4 @@
     </div>
 </div>
 
-<%- include("../../partials/footer.ejs"); %>
+<%- include("../../partials/footer.ejs") %>
