@@ -9,6 +9,7 @@ const usersController = require("./users/UsersController")
 
 const Article = require("./articles/Article")
 const Category = require("./categories/Category")
+const User = require("./users/User")
 
 
 
