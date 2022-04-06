@@ -47,29 +47,6 @@ app.use("/", articlesController);
 app.use("/", usersController);
 
 
-app.get("/session", (req, res) => {
-    req.session.treinamento = "formação Node.Js"
-    req.session.ano = 2022
-    req.session.email = "vieira@email.com"
-    req.session.user = {
-        username: "vieira", 
-        email: "email@email.com",
-        id: 10
-    }
-    res.send("session created!");
-});
-
-
-app.get("/leitura", (req, res) => {
-    res.json({
-        treinamento: req.session.treinamento,
-        ano: req.session.ano,
-        email: req.session.email,
-        user: req.session.user
-    })
-
-})
-
 app.get("/", (req, res) => {
     Article.findAll({
        order:[
