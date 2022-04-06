@@ -1,15 +1,23 @@
-const express = require("express")
-const app = express()
-const bodyParser = require("body-parser")
-const connection = require("./database/database")
-const session = require("express-session")
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+const session = require('express-session');
+const connection = require("./database/database");
 
+
+const categoriesController = require("./categories/CategoriesController");
+const articlesController = require("./articles/ArticlesController");
+const usersController = require("./users/UsersController");
+
+const Article = require("./articles/Article");
+const Category = require("./categories/Category");
+const User = require("./users/User");
 
 
 
 //sessions
 app.use(session({
-    secret: "qualquercoisa", cookie: {maxAge: 30000}
+    secret: "qualquercoisa", cookie: { maxAge: 30000 }
 }))
 
 //View wngine
@@ -26,7 +34,9 @@ app.use(bodyParser.json())
 connection
     .authenticate()
     .then(() => {
+        console.log("")
         console.log("Sucessfull connection")
+        console.log("")
     }).catch((error) => {
         console.log("error")
     })
@@ -36,6 +46,29 @@ app.use("/", categoriesController);
 app.use("/", articlesController);
 app.use("/", usersController);
 
+
+app.get("/session", (req, res) => {
+    req.session.treinamento = "formação Node.Js"
+    req.session.ano = 2022
+    req.session.email = "vieira@email.com"
+    req.session.user = {
+        username: "vieira", 
+        email: "email@email.com",
+        id: 10
+    }
+    res.send("session created!");
+});
+
+
+app.get("/leitura", (req, res) => {
+    res.json({
+        treinamento: req.session.treinamento,
+        ano: req.session.ano,
+        email: req.session.email,
+        user: req.session.user
+    })
+
+})
 
 app.get("/", (req, res) => {
     Article.findAll({
