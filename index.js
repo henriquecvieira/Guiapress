@@ -12,11 +12,13 @@ const Category = require("./categories/Category")
 const User = require("./users/User")
 
 
-
+//View wngine
 app.set('view engine', 'ejs')
 
+// Static
 app.use(express.static('public'))
 
+//Body parser
 app.use(express.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
