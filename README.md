@@ -1,5 +1,5 @@
 
-<h1>Guiapress</h1>
+#Guiapress
 
 Blog com painel administrativo 
 parte integrante do curso Formação Node JS - plataforma Udemy
@@ -53,6 +53,31 @@ listagem dos arquivos e das categorias.
 
 
 
+## Dependências
+
+
+
+```bash
+
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.17.0",
+    "slugify": "^1.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
+```
+    
 ## Aluno e Autor
 
 - [Henrique Vieira](https://github.com/henriquecvieira/Guiapress)
