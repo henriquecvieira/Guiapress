@@ -78,9 +78,8 @@ listagem dos arquivos e das categorias.
 }
 ```
     
-## Aluno e Autor
+## Professor
 
-- [Henrique Vieira](https://github.com/henriquecvieira/Guiapress)
 - [Victor Lima](https://github.com/techtuxbr)
 
 ## Referência
